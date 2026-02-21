@@ -1,0 +1,33 @@
+{
+  "name": "Subscription Stack",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "frontend",
+  "workspaceFolder": "/workspaces/Gestion_Abonnement",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17"
+    }
+  },
+  "forwardPorts": [3000, 8080, 5432],
+  "postCreateCommand": "npm install --prefix frontend",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.exclude": {
+          "**/node_modules": true,
+          "**/.mvn": true
+        }
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "redhat.java",
+        "vscjava.vscode-spring-initializr"
+      ]
+    }
+  }
+}
